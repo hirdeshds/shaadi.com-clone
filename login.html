@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="bgvideo">
+        <video autoplay muted loop id="bgVideo">
+            <source src="bgvideo.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Get the username from the form
+            const username = document.getElementById('username').value;
+            // Save the username in localStorage
+            localStorage.setItem('username', username);
+            // Show a success alert
+            alert('Sign Up Successful!');
+            // Redirect to index.html
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
